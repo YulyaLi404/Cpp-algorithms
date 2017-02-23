@@ -8,7 +8,7 @@ void showArr(int arr[], int size); // Показ массива
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
+	setlocale(LC_ALL, "Rus");
 	const int arrSize = 50;
 	int arr[arrSize];
 	int requiredKey = 0; // Искомое значение (ключ)
