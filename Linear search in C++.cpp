@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <ctime>
 
-// Прототипы функций
+//Прототипы функций
 int linSearch(int arr[], int requiredKey, int size); // Линейный поиск
 void showArr(int arr[], int size); // Показ массива
 
