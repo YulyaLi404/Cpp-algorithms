@@ -2,19 +2,19 @@
 #include <iomanip>
 #include <ctime>
 
-int linSearch(int arr[], int requiredKey, int size); // Ëèíåéíûé ïîèñê
-void showArr(int arr[], int size); // Ïîêàç ìàññèâà
+int linSearch(int arr[], int requiredKey, int size); // Линейный поиск
+void showArr(int arr[], int size); // Показ массива
 
 int main()
 {
 	setlocale(LC_ALL, "Rus");
 	const int arrSize = 50;
 	int arr[arrSize];
-	int requiredKey = 0; // Èñêîìîå çíà÷åíèå (êëþ÷)
-	int nElement = 0; // Íîìåð ýëåìåíòà ìàññèâà
+	int requiredKey = 0; // Искомое значение (ключ)
+	int nElement = 0;    // Номер элемента массива
 	srand(time(NULL));
 
-	// Çàïèñü ñëó÷.÷èñåë â ìàññèâ îò 1 äî 50
+	// Запись случ.чисел в массив от 1 до 50
 	for (int i = 0; i < arrSize; i++)
 	{
 		arr[i] = 1 + rand() % 50;
@@ -22,28 +22,28 @@ int main()
 
 	showArr(arr, arrSize);
 
-	std::cout << "Êàêîå ÷èñëî íåîáõîäèìî èñêàòü? ";
-	std::cin >> requiredKey; // Âûâîä èñêîìîãî ÷èñëà
+	std::cout << "Какое число необходимо искать? ";
+	std::cin >> requiredKey; // Вывод искомого числа
 
-	// Ïîèñê èñêîìîãî ÷èñëà è çàïèñü íîìåðà ýëåìåíòà
+	// Поиск искомого числа и запись номера элемента
 	nElement = linSearch(arr, requiredKey, arrSize);
 
 	if (nElement != -1)
 	{
-		// Åñëè â ìàññèâå íàéäåíî èñêîìîå ÷èñëî - âûâîäèì èíäåêñ ýëåìåíòà íà ýêðàí
-		std::cout << "Çíà÷åíèå " << " íàõîäèòüñÿ â ÿ÷åéêå ñ èíäåêñîì: " << nElement << std::endl;
+		// Если в массиве найдено искомое число - выводим индекс элемента на экран
+		std::cout << "Значение " << " находиться в ячейке с индексом: " << nElement << std::endl;
 	}
 	else
 	{
-		// Åñëè â ìàññèâå íå íàéäåíî èñêîìîå ÷èñëî
-		std::cout << "Â ìàññèâå íåò òàêîãî çíà÷åíèÿ" << std::endl;
+		// Если в массиве не найдено искомое число
+		std::cout << "В массиве нет такого значения" << std::endl;
 	}
 
 	system("Pause");
 	return 0;
 }
 
-// Âûâîä ìàññèâà íà ýêðàí
+// Вывод массива на экран
 void showArr(int arr[], int arrSize)
 {
 	for (int i = 0; i < arrSize; i++)
@@ -57,7 +57,7 @@ void showArr(int arr[], int arrSize)
 	std::cout << std::endl << std::endl;
 }
 
-// Ëèíåéíûé ïîèñê
+// Линейный поиск
 int linSearch(int arr[], int requiredKey, int arrSize)
 {
 	for (int i = 0; i < arrSize; i++)
