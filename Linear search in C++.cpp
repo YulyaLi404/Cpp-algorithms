@@ -2,20 +2,20 @@
 #include <iomanip>
 #include <ctime>
 
-// Прототипы функций
-int linSearch(int arr[], int requiredKey, int size); // Линейный поиск
-void showArr(int arr[], int size); // Показ массива
+// РџСЂРѕС‚РѕС‚РёРїС‹ С„СѓРЅРєС†РёР№
+int linSearch(int arr[], int requiredKey, int size); // Р›РёРЅРµР№РЅС‹Р№ РїРѕРёСЃРє
+void showArr(int arr[], int size); // РџРѕРєР°Р· РјР°СЃСЃРёРІР°
 
 int main()
 {
 	setlocale(LC_ALL, "Rus");
 	const int arrSize = 50;
 	int arr[arrSize];
-	int requiredKey = 0; // Искомое значение (ключ)
-	int nElement = 0; // Номер элемента массива
+	int requiredKey = 0; // РСЃРєРѕРјРѕРµ Р·РЅР°С‡РµРЅРёРµ (РєР»СЋС‡)
+	int nElement = 0; // РќРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР°
 	srand(time(NULL));
 
-	// Запись случ.чисел в массив от 1 до 50
+	// Р—Р°РїРёСЃСЊ СЃР»СѓС‡.С‡РёСЃРµР» РІ РјР°СЃСЃРёРІ РѕС‚ 1 РґРѕ 50
 	for (int i = 0; i < arrSize; i++)
 	{
 		arr[i] = 1 + rand() % 50;
@@ -23,28 +23,28 @@ int main()
 
 	showArr(arr, arrSize);
 
-	std::cout << "Какое число необходимо искать? ";
-	std::cin >> requiredKey; // Вывод искомого числа
+	std::cout << "РљР°РєРѕРµ С‡РёСЃР»Рѕ РЅРµРѕР±С…РѕРґРёРјРѕ РёСЃРєР°С‚СЊ? ";
+	std::cin >> requiredKey; // Р’С‹РІРѕРґ РёСЃРєРѕРјРѕРіРѕ С‡РёСЃР»Р°
 
-	// Поиск искомого числа и запись номера элемента
+	// РџРѕРёСЃРє РёСЃРєРѕРјРѕРіРѕ С‡РёСЃР»Р° Рё Р·Р°РїРёСЃСЊ РЅРѕРјРµСЂР° СЌР»РµРјРµРЅС‚Р°
 	nElement = linSearch(arr, requiredKey, arrSize);
 
 	if (nElement != -1)
 	{
-		// Если в массиве найдено искомое число - выводим индекс элемента на экран
-		std::cout << "Значение " << " находиться в ячейке с индексом: " << nElement << std::endl;
+		// Р•СЃР»Рё РІ РјР°СЃСЃРёРІРµ РЅР°Р№РґРµРЅРѕ РёСЃРєРѕРјРѕРµ С‡РёСЃР»Рѕ - РІС‹РІРѕРґРёРј РёРЅРґРµРєСЃ СЌР»РµРјРµРЅС‚Р° РЅР° СЌРєСЂР°РЅ
+		std::cout << "Р—РЅР°С‡РµРЅРёРµ " << " РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ СЏС‡РµР№РєРµ СЃ РёРЅРґРµРєСЃРѕРј: " << nElement << std::endl;
 	}
 	else
 	{
-		// Если в массиве не найдено искомое число
-		std::cout << "В массиве нет такого значения" << std::endl;
+		// Р•СЃР»Рё РІ РјР°СЃСЃРёРІРµ РЅРµ РЅР°Р№РґРµРЅРѕ РёСЃРєРѕРјРѕРµ С‡РёСЃР»Рѕ
+		std::cout << "Р’ РјР°СЃСЃРёРІРµ РЅРµС‚ С‚Р°РєРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ" << std::endl;
 	}
 
 	system("Pause");
 	return 0;
 }
 
-// Вывод массива на экран
+// Р’С‹РІРѕРґ РјР°СЃСЃРёРІР° РЅР° СЌРєСЂР°РЅ
 void showArr(int arr[], int arrSize)
 {
 	for (int i = 0; i < arrSize; i++)
@@ -58,7 +58,7 @@ void showArr(int arr[], int arrSize)
 	std::cout << std::endl << std::endl;
 }
 
-// Линейный поиск
+// Р›РёРЅРµР№РЅС‹Р№ РїРѕРёСЃРє
 int linSearch(int arr[], int requiredKey, int arrSize)
 {
 	for (int i = 0; i < arrSize; i++)
