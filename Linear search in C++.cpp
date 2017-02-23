@@ -16,8 +16,7 @@ int main()
 	srand(time(NULL));
 
 	// Запись случ.чисел в массив от 1 до 50
-	for (int i = 0; i < arrSize; i++)
-	{
+	for (int i = 0; i < arrSize; i++) {
 		arr[i] = 1 + rand() % 50;
 	}
 
@@ -29,13 +28,11 @@ int main()
 	// Поиск искомого числа и запись номера элемента
 	nElement = linSearch(arr, requiredKey, arrSize);
 
-	if (nElement != -1)
-	{
+	if (nElement != -1) {
 		// Если в массиве найдено искомое число - выводим индекс элемента на экран
 		std::cout << "Значение " << " находиться в ячейке с индексом: " << nElement << std::endl;
-	}
-	else
-	{
+	} 
+	else {
 		// Если в массиве не найдено искомое число
 		std::cout << "В массиве нет такого значения" << std::endl;
 	}
@@ -47,11 +44,9 @@ int main()
 // Вывод массива на экран
 void showArr(int arr[], int arrSize)
 {
-	for (int i = 0; i < arrSize; i++)
-	{
+	for (int i = 0; i < arrSize; i++) {
 		std::cout << std::setw(4) << arr[i];
-		if ((i + 1) % 10 == 0)
-		{
+		if ((i + 1) % 10 == 0) {
 			std::cout << std::endl;
 		}
 	}
@@ -61,10 +56,8 @@ void showArr(int arr[], int arrSize)
 // Линейный поиск
 int linSearch(int arr[], int requiredKey, int arrSize)
 {
-	for (int i = 0; i < arrSize; i++)
-	{
-		if (arr[i] == requiredKey)
-		{
+	for (int i = 0; i < arrSize; i++) {
+		if (arr[i] == requiredKey) {
 			return i;
 		}
 	}
